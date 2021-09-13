@@ -1,0 +1,168 @@
+/* Specification */
+body {
+    box-sizing: border-box;
+}
+h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+section {
+    width: 1110px;
+    padding-top: 50px;
+}
+/* TABS */
+
+.tabs {
+    
+    display: flex;
+    align-items: flex-end;
+    
+}
+
+.tab  {
+    padding: 19px 48px;
+    height: 50px;
+    border: 1px solid #A9ADD1;
+    border-radius: 5px 5px 0px 0px;
+    color: #717497;
+    transition: height 500ms ease, color 500ms ease;
+
+    
+}  
+.tab.active {
+height: 60px;
+border-top: 5px solid #5CBB4C;
+border-radius: 5px 5px 0px 0px;
+transition: height 500ms ease, color 500ms ease;
+color: #2D3685;
+
+}
+
+.tab p {
+    
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    /* identical to box height */
+    
+    
+ 
+    pointer-events: none;
+}
+
+/* content */
+.content {
+    width: 825px;
+   
+    border: 1px solid #A9ADD1;
+    position: relative;
+    height: 310px;
+    
+    border-radius: 0px 0px 10px 10px;
+}
+
+.content-item {
+    position: absolute;
+    width: 695px;
+    top: 47px;
+    left: 48px;
+    opacity: 0;
+    transform: scale(0.6);
+    transition: opacity 1000ms ease, transform 500ms ease;
+
+
+
+}
+.content-item.active {
+    
+    opacity: 1;
+    transition: opacity 1000ms ease, transform 500ms ease;
+    transform: scale(1);
+    
+
+}
+.content-text {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 20px;
+    margin-top: 20px;
+    color: #2D3685;
+}
+
+  
+h2 {
+    font-family: Open Sans;
+font-style: normal;
+font-weight: 600;
+font-size: 25px;
+line-height: 34px;
+/* identical to box height */
+
+
+color: #2D3685;
+}
+
+/* modal  window */
+
+.btn {
+    width: 200px;
+    height: 50px;
+    background-color: #FF4D8D;
+    color: #FFF;
+    margin: 14px auto;
+    font-family: Open Sans;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 22px;
+
+}
+
+.modal-window {
+    width: 475px;
+    padding: 60px 48px;
+    display: flex;
+flex-direction: column;
+justify-content: center;
+background: #FFFFFF;
+box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.09);
+border-radius: 10px;
+position: absolute;
+top: 50%;
+left: 0;
+
+transform: scale(0.5);
+transition: transform 500ms ease, opacity 500ms ease;
+opacity: 0;
+
+
+}   
+.modal-window.active {
+    transform: scale(1);
+    opacity: 1;
+}
+.modal-window b {
+    margin-bottom: 27px;
+}
+.close-btn {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    border-color: rgb(145, 142, 142);
+    position: absolute;
+    top: 5px;
+    left: 100%;
+    transform: translateX(-100%);
+    transform: translateZ(1);
+
+}
+.close-btn:hover {
+    border-color: #000;
+    
+}
