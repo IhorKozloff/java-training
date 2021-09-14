@@ -15,7 +15,7 @@ section {
 /* TABS */
 
 .tabs {
-    
+    padding-top: 5px;
     display: flex;
     align-items: flex-end;
     
@@ -23,19 +23,20 @@ section {
 
 .tab  {
     padding: 19px 48px;
-    height: 50px;
+    height: 30px;
     border: 1px solid #A9ADD1;
     border-radius: 5px 5px 0px 0px;
     color: #717497;
-    transition: height 500ms ease, color 500ms ease;
+    transform-origin: bottom;
+    transition: transform 500ms ease, color 500ms ease;
 
     
 }  
 .tab.active {
-height: 60px;
+transform: scaleY(1.1);
 border-top: 5px solid #5CBB4C;
 border-radius: 5px 5px 0px 0px;
-transition: height 500ms ease, color 500ms ease;
+/* transition: transform 500ms ease, color 500ms ease; */
 color: #2D3685;
 
 }
@@ -47,10 +48,6 @@ color: #2D3685;
     font-weight: 600;
     font-size: 16px;
     line-height: 22px;
-    /* identical to box height */
-    
-    
- 
     pointer-events: none;
 }
 
@@ -123,46 +120,58 @@ font-size: 16px;
 line-height: 22px;
 
 }
+.btn:hover {
+    cursor: pointer;
+    border: 1px solid #4003ce;
+}
+
+.overlay {
+    position: fixed;
+    background: rgba(47, 48, 58, 0.5);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1);
+   
+    opacity: 0;
+    pointer-events: none;
+}
 
 .modal-window {
     width: 475px;
     padding: 60px 48px;
     display: flex;
-flex-direction: column;
-justify-content: center;
-background: #FFFFFF;
-box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.09);
-border-radius: 10px;
-position: absolute;
-top: 50%;
-left: 0;
-
-transform: scale(0.5);
-transition: transform 500ms ease, opacity 500ms ease;
-opacity: 0;
+    flex-direction: column;
+    justify-content: center;
+    background: #FFFFFF;
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.09);
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+   
+    transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1), opacity 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  
 
 
 }   
-.modal-window.active {
-    transform: scale(1);
+
+.overlay.active {
+    pointer-events: all;
     opacity: 1;
 }
 .modal-window b {
     margin-bottom: 27px;
 }
 .close-btn {
-    width: 20px;
-    height: 20px;
-    border-radius: 10px;
-    border-color: rgb(145, 142, 142);
+    border: none;
+    background-color: #FFFFFF;
     position: absolute;
     top: 5px;
     left: 100%;
-    transform: translateX(-100%);
-    transform: translateZ(1);
+    transform: translateX(-100%);   
+}
 
-}
-.close-btn:hover {
-    border-color: #000;
-    
-}

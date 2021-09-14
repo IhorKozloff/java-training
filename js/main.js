@@ -2,6 +2,7 @@
 const tabwrapper = document.querySelector('.tabs');
 const contentwrapper = document.querySelector('.content');
 const modalWindow = document.querySelector('.modal-window');
+const overlay = document.querySelector('.overlay');
 const btn = document.querySelector('.btn');
 const closebtn = document.querySelector('.close-btn')
 
@@ -30,21 +31,22 @@ if (contentwrapper.children[k].dataset.content == curTab) {
         
 });
 
+
+
+
 btn.addEventListener('click', () => {
-    modalWindow.classList.toggle('active');
+    overlay.classList.add('active');
+    
+
 
 });
+
 
 closebtn.addEventListener('click', () => {
-    modalWindow.classList.remove('active');
-
+    overlay.classList.remove('active');
+    
 });
 
 
 
-// const overlayClicked = () => {
-//     for (i = 0; i < overlay.length; i++) {
-//         overlay[i].classList.toggle('active');
-//     }
-//     // overlay[i].classList.add('active');
-// }
+
